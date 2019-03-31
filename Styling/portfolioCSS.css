@@ -1,0 +1,205 @@
+@-webkit-keyframes mymove {
+  from {
+    right: 100vw;
+  }
+  to {
+    right: 0px;
+  }
+}
+@keyframes mymove {
+  from {
+    right: 100vw;
+  }
+  to {
+    right: 0px;
+  }
+}
+body {
+  background-color: #3a004c;
+  background-image: url("https://res.cloudinary.com/metaverse/image/upload/co_rgb:3a004c,cs_srgb,e_colorize:70/v1554058466/Portfolio%20Screenshots/background.png");
+  background-size: cover;
+  font-family: Palatino;
+}
+
+#header {
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  background: #3a004c;
+  background: linear-gradient(234deg, #3a004c 0%, #3e0962 14%, #3e0963 18%, #3f0a65 28%, #491d96 53%, #4d25aa 71%, #4d25aa 83%);
+  color: #f6fafe;
+  height: 35vh;
+}
+#header #profilePic {
+  max-height: 100px;
+  max-width: 100px;
+  min-height: 50px;
+  min-width: 50px;
+  -webkit-clip-path: polygon(50% 0%, 100% 23%, 83% 100%, 18% 100%, 0 26%);
+  clip-path: polygon(50% 0%, 100% 23%, 83% 100%, 18% 100%, 0 26%);
+  object-fit: cover;
+}
+
+#projNav {
+  height: 25vh;
+}
+#projNav #searchBar {
+  background-color: #373737;
+}
+#projNav #searchBar .filterToggle {
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  height: 0;
+  top: 50%;
+}
+#projNav #searchBar .filterToggle input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+#projNav #searchBar .filterToggle label {
+  background-color: #C0B283;
+  border-radius: 5%;
+  -webkit-box-shadow: 0px 5px 8px 3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 5px 8px 3px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 5px 8px 3px rgba(0, 0, 0, 0.75);
+}
+#projNav #searchBar .filterToggle input:checked + label {
+  outline-style: groove;
+  outline-color: white;
+  outline-width: 2px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+#projNav #previewBar {
+  background-color: #f6fafe;
+  position: relative;
+  -webkit-animation: mymove 2s ease-out;
+  /* Safari 4.0 - 8.0 */
+  animation: mymove 2s ease-out;
+}
+#projNav #previewBar .projectSlot {
+  position: relative;
+  overflow: hidden;
+}
+#projNav #previewBar .projectSlot .projectThumbnail {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 80%;
+  width: 50%;
+  border: 2px solid #373737;
+  margin-left: -25%;
+  margin-top: -15%;
+  transition: border 0.5s;
+  background-size: 100% 100%;
+}
+#projNav #previewBar .projectSlot .projectThumbnail .thumbnailTitle {
+  background-color: #373737;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  height: 20%;
+  width: 100%;
+  text-align: center;
+  color: #f6fafe;
+}
+#projNav #previewBar .projectSlot .projectThumbnail:hover {
+  border: 5px solid #C0B283;
+}
+#projNav #previewBar .projNavRightButton {
+  background-image: url("https://res.cloudinary.com/metaverse/image/upload/e_grayscale,fl_preserve_transparency,o_100/a_0/v1553798430/UI/icons8-chevron-right-96.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: Transparent;
+  border: none;
+}
+#projNav #previewBar .projNavRightButton:hover {
+  background-image: url("https://res.cloudinary.com/metaverse/image/upload/fl_preserve_transparency,o_100/v1553798430/UI/icons8-chevron-right-96.png");
+  cursor: pointer;
+}
+#projNav #previewBar .projNavLeftButton {
+  background-image: url("https://res.cloudinary.com/metaverse/image/upload/e_grayscale,fl_preserve_transparency,o_100/a_180/v1553798430/UI/icons8-chevron-right-96.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: Transparent;
+  border: none;
+}
+#projNav #previewBar .projNavLeftButton:hover {
+  background-image: url("https://res.cloudinary.com/metaverse/image/upload/fl_preserve_transparency,o_100/a_180/v1553798430/UI/icons8-chevron-right-96.png");
+  cursor: pointer;
+}
+
+#footer {
+  height: 40vh;
+  background-color: #4d25aa;
+  color: #f6fafe;
+}
+
+.carousel {
+  max-width: 100%;
+  min-width: 200px;
+  height: 500px;
+}
+.carousel .carouselImg {
+  height: 500px;
+}
+.carousel .carousel-caption {
+  left: 0;
+  bottom: 0;
+  max-width: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  transition: opacity 1s ease-in;
+}
+.carousel .carousel-caption:hover {
+  opacity: 0;
+}
+
+#projectSpecs {
+  max-height: 75vh;
+  overflow: auto;
+  background-color: #f6fafe;
+  transition: transform 0.5s ease-out;
+  transform-origin: top;
+}
+#projectSpecs .videoText:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.collapsed {
+  transform: scaleY(0);
+}
+
+.overlay {
+  position: fixed;
+  /* Sit on top of the page content */
+  width: 100%;
+  /* Full width (cover the whole page) */
+  height: 100%;
+  /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  /* Black background with opacity */
+  overflow: auto;
+  z-index: 30;
+  display: none;
+}
+.overlay #overlayExitButton {
+  background-color: #4d25aa;
+  color: #f6fafe;
+  float: right;
+  margin-right: 15px;
+  margin-top: 10px;
+}
+
+/*# sourceMappingURL=portfolioCSS.css.map */
