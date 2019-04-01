@@ -66,6 +66,7 @@ let projectBar={
 let projectView={
   displayProject:function(index){
     //when thumbnail clicked, display the project screen
+
     let projArray=searchBar.getFilteredProjects();
     let project=projArray[index];
     let projectSpecs=``;
@@ -115,7 +116,7 @@ let projectView={
 
 
     projectSpecs+=
-  `  <div class="row">
+  `  <div class="row mt-4">
         <div class="col offset-2">
           <h2>${project.name}</h2>
           <hr>
@@ -161,7 +162,10 @@ let projectView={
 
     $("#projectSpecs").html(projectSpecs);
     $("#projectSpecs").removeClass("collapsed");
-    $("#projectSpecs")[0].scrollIntoView({behavior: "smooth"});
+    document.getElementById("projectSpecs").scrollTop=0;
+    $("#projNav")[0].scrollIntoView({behavior: "smooth"});
+
+
 
   }
 }
@@ -174,7 +178,6 @@ let searchBar={
 
     if (projectFilter.length){
       for (let i=0; i<projectData.length; i++){
-        console.log(projectData);
         if(!checkInclusion(projectData[i].technologiesUsed, projectFilter)){
           splicedIndexes.push(i);
         }
@@ -186,34 +189,38 @@ let searchBar={
 
     return projectData;
 
-    function checkInclusion (theList, guest){
-      //both assumed to be arrays, returns true if EVERY element in guest is on the list therwise return false
-      for (let i=0; i<guest.length; i++){
-        if (!theList.includes(guest[i])){
-          return false;
-        }
-      }
-      return true;
-    }
+
   },
   //create filtering buttons
   setFilterButtons:function(){
     //called on start
+    let projectFilter=JSON.parse(localStorage.getItem("projectFilter"));
     let projectData=JSON.parse(localStorage.getItem("projectData"));
     let filters={};
-    let searchBar=``;
+    let searchBar=`<span class="mt-2 mx-2 searchbarTitle">Filter Projects:</span>`;
     for (let i=0; i<projectData.length; i++){
       let techUsed=projectData[i].technologiesUsed;
+      if (projectFilter.length>0 && !checkInclusion(techUsed, projectFilter)){
+        continue;
+      }
       for (let j=0; j<techUsed.length; j++){
         let newFilter=techUsed[j];
         if (filters.hasOwnProperty(newFilter)){
           filters[newFilter].counter++;
+
         }
         else{
           filters[newFilter]={
             counter:1,
             label:newFilter
           }
+          if (projectFilter.includes(newFilter)){
+            filters[newFilter].toggled="checked";
+          }
+          else{
+            filters[newFilter].toggled="";
+          }
+
         }
       }
     }
@@ -221,7 +228,7 @@ let searchBar={
     filters=Object.values(filters);
     filters.forEach(function(filter){
       searchBar+=`<div class="filterToggle  mx-2 mt-3">
-        <input id="toggle${filter.label}" type="checkbox" onchange="searchBar.toggleFilter(event.target.checked, '${filter.label}')">
+        <input id="toggle${filter.label}" type="checkbox" onchange="searchBar.toggleFilter(event.target.checked, '${filter.label}')" ${filter.toggled}>
         <label class="pl-1" for="toggle${filter.label}">${filter.label}<span class="badge badge-light mx-1">${filter.counter}</span></label>
       </div>`;
     });
@@ -232,7 +239,6 @@ let searchBar={
   //have filter buttons, when at least one is active, change the available list of projects
   toggleFilter:function(checked, filterName){
     let projectFilter=JSON.parse(localStorage.getItem("projectFilter"));
-    console.log(event);
     if (checked){
       projectFilter.push(filterName);
     }
@@ -243,6 +249,7 @@ let searchBar={
     localStorage.setItem("projectFilter", JSON.stringify(projectFilter));
     localStorage.setItem("projBarCounter", 0);
     projectBar.setBarThumbnails();
+    searchBar.setFilterButtons();
   }
 
 }
@@ -266,7 +273,15 @@ let videoOverlay={
 }
 
 
-
+function checkInclusion (theList, guest){
+  //both assumed to be arrays, returns true if EVERY element in guest is on the list therwise return false
+  for (let i=0; i<guest.length; i++){
+    if (!theList.includes(guest[i])){
+      return false;
+    }
+  }
+  return true;
+}
 
 
 
