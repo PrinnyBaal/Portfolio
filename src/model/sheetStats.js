@@ -41,7 +41,15 @@ let projectData=[
     aboutSection:"The result of some experimenting with Ren'py and wanting to see how feasible adding a more actively 'gamey' experience would be given a little extra python scripting.  Surrounding the two mini-games I completed are short little stories set in the 'Star Vs. The Forces of Evil' universe.  While one of the least complete things in my portfolio I still feel a lot of nostalgic pride for it and the two combat mini-games mixed in.<br><br>  I think it's because I have a lot of fond memories of Ren'py in general.  I started my programming journey by learning python with a goal to help with psych experiments in college and then later to help with a little office work.  But the first time I felt giddily happy learning and experimenting was learning to make a birthday gift with Ren'py.<br><br><a href=' https://drive.google.com/open?id=1FTh22-GiouojxBtoqm7Bev0KwBA9HQoh'>Game Files on G-Drive</a>",
     technologiesUsed:["GameDev", "Python", "Renpy"],
     moreSection:[{url:"https://www.youtube.com/embed/LhAfCkhsgVI", previewText:"Video Tour (Part 1)"},{url:"https://www.youtube.com/embed/oioUiWbRdUA", previewText:"Video Tour (Part 2)"}]
-  }
+  },
+  {
+    name:"Card_Cobbler",
+    thumbnail:"https://res.cloudinary.com/metaverse/image/upload/v1561562526/Portfolio%20Screenshots/higgsyCobbler.png",
+    sampleImages:[{url:"https://res.cloudinary.com/metaverse/image/upload/v1561562788/Portfolio%20Screenshots/cobblerMain.png", captionTitle:"General Purpose", caption:"This web app lets users build cards from movable image and text components.  A happy middle-ground between gimp/PS and your average card-game generator."}, {url:"https://res.cloudinary.com/metaverse/image/upload/v1561562794/Portfolio%20Screenshots/cobblerCatalogue.png", captionTitle:"Catalogues", caption:"Images can be stored as fully customizable catalogues for easy storing.  They can also be sorted/filtered by tags for easy retrieval."}, {url:"https://res.cloudinary.com/metaverse/image/upload/v1561562785/Portfolio%20Screenshots/cobblerTemplates.png", captionTitle:"Templates", caption:"Templates allow users to store fully made cards or to store, well, templates with the text, card frame, and images positioned just how they want it and ready for content edits."}],
+    aboutSection:"I've enjoyed making web tools and toys for people to create with and I think that learning more about UX is a large part of that.  Pondering how to best make them easy to pick-up while still feeling good for experienced users feels like tangling with a living puzzle while still being a great creative outlet.<br><br>  This was also my first project to receive a wide amount of support and feedback in the forums I shared it in.  Which, while my friends have always been supportive, gave me a great burst of confidence as I felt I really could make things people wanted.<br><br><a href=' https://prinnybaal.github.io/Higgsy-sCardCobbler/'>Site Link</a><br><br><a href='https://github.com/PrinnyBaal/Higgsy-sCardCobbler'>Github Repository</a>",
+    technologiesUsed:["HTML", "Javascript", "CSS", "jquery"],
+    moreSection:[]
+  },
 ];
 
 
