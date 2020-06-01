@@ -172,7 +172,6 @@ body {
 }
 
 #projectSpecs {
-  max-height: 75vh;
   overflow: auto;
   background-color: #f6fafe;
   transition: transform 0.5s ease-out;

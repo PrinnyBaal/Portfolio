@@ -125,7 +125,7 @@ let projectView={
 
 
       <div class="row" style="">
-        <div id="carouselIndicators" class="carousel slide col-6 offset-2 mt-2" data-ride="carousel">
+        <div id="carouselIndicators" class="carousel slide ${project.moreSection.length? "col-6 offset-2":"col-10 offset-1"}  mt-2" data-ride="carousel">
           <ol class="carousel-indicators">
             ${carouselIndicators}
           </ol>
@@ -148,7 +148,7 @@ let projectView={
       </div>
 
       <div class="row">
-        <div class="col-3 offset-2">
+        <div class="${project.moreSection.length? "col-3 offset-2":"col-6 offset-1"}  offset-2">
           <h2>About Section</h2>
           ${project.aboutSection}
         </div>
@@ -158,7 +158,9 @@ let projectView={
           ${techList}
           </ul>
         </div>
-      </div>`;
+      </div>
+      <hr>
+      `;
 
     $("#projectSpecs").html(projectSpecs);
     $("#projectSpecs").removeClass("collapsed");
