@@ -44,7 +44,7 @@ let projectData=[
     moreSection:[]
   },
   {name:"Pathfinder_Crafting",
-  thumbnail:"./images/uCraft_Thumbnail.png",
+  thumbnail:"./images/uCraft_Thumbnail.PNG",
   sampleImages:[{url:"./images/uCraft_Thumbnail.png", captionTitle:"", caption:"Pages upon pages of complicated crafting rules are made easy to understand thanks to affordances in the design."}],
   aboutSection:`<a href="https://prinnybaal.github.io/Higgsy-s-U-Craft/">Visit the Site</a><br><a href="https://prinnybaal.github.io/ModularSheet/">View code on Github</a><hr>The least generic of the tabletop tools I've made, this project dives deep into the Pathfinder rules system.  This project went through a number of iterations, mostly geared toward power users, before I came to really take to heart how important affordances in design are.<br><br>In the end I feel the site struck a nice balance between being accessible to novices and useful to more advanced users, all while maintaining a reasonable aesthetic.`,
   technologiesUsed:["HTML", "Javascript", "CSS"],
